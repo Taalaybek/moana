@@ -1,0 +1,14 @@
+{
+	"description": "The Moana Simple PHP framework",
+	"name": "moana/framework",
+	"type": "project",
+	"homepage": "https://codeigniter.com",
+	"license": "MIT",
+	"support": {
+		"wiki": "https://github.com/Taalaybek/moana/wiki",
+		"source": "https://github.com/Taalaybek/moana"
+	},
+	"require": {
+		"php": ">=7.1"
+	}
+}
