@@ -45,21 +45,21 @@
 			public function __construct()
 			{
 				
-			};
+			}
 
 			public function add()
 			{
 
-			};
+			}
 
 			public function verify()
 			{
 
-			};
+			}
 
 			public function run()
 			{
 
-			};
+			}
 		};
 		
