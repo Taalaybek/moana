@@ -43,7 +43,7 @@
 				* @param array, default value - empty
 				*/
 					protected $routes = [];
-					
+
 			/**
 				* Routes's params
 				* @param array, default value - empty
@@ -60,7 +60,7 @@
 						$arr = require 'application/config/routes.php';
 						
 						foreach ( $arr as $key => $val ) {
-							$this->add($key, $val);
+							$this->add( $key, $val );
 						}
 					}
 
@@ -71,7 +71,8 @@
 				*/
 					public function add( $route, $params )
 					{
-
+						$route = "#^" . $route . "$#";
+						$this->$routes[$route] = $params;
 					}
 			/**
 				*	Verify routes method
