@@ -38,28 +38,57 @@
 		class Router
 		{
 			
-			protected $routes = [];
+			/**
+				* Routes's names
+				* @param array, default value - empty
+				*/
+					protected $routes = [];
+			/**
+				* Routes's params
+				* @param array, default value - empty
+				*/
+					protected $params = [];
 
-			protected $params = [];
+			/**
+				*	Class constructor
+				* @method's load routes config, library, take down new routes in to add method
+				* @version 1.0.0
+				*/
+					public function __construct()
+					{
+						$arr = require 'application/config/routes.php';
+						
+						foreach ( $arr as $key => $val ) {
+							$this->add($key, $val);
+						}
+					}
 
-			public function __construct()
-			{
-				
-			}
+			/**
+				*	Add new route method
+				*	@param $route, $params
+				* @version 1.0.0
+				*/
+					public function add( $route, $params )
+					{
 
-			public function add()
-			{
+					}
+			/**
+				*	Verify routes method
+				*	@param $route, $params
+				* @version 1.0.0
+				*/
+					public function verify()
+					{
 
-			}
+					}
+			/**
+				*	Run routes method
+				*	@param $route, $params
+				* @version 1.0.0
+				*/
+					public function run()
+					{
 
-			public function verify()
-			{
-
-			}
-
-			public function run()
-			{
-
-			}
+					}
 		};
 		

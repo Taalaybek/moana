@@ -11,11 +11,11 @@
 		return [
 			'account/login' => [
 				'controller' => 'account',
-				'controller' => 'login'
+				'action' => 'login'
 			],
 
-			'news/show' => {
+			'news/show' => [
 					'controller' => 'news',
 					'action' => 'show'
-			}
+			]
 		];
