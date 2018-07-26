@@ -72,7 +72,7 @@
 					public function add( $route, $params )
 					{
 						$route = "#^" . $route . "$#";
-						$this->$routes[$route] = $params;
+						$this->routes[$route] = $params;
 					}
 			/**
 				*	Verify routes method
