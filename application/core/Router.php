@@ -43,6 +43,7 @@
 				* @param array, default value - empty
 				*/
 					protected $routes = [];
+					
 			/**
 				* Routes's params
 				* @param array, default value - empty
