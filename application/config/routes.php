@@ -1,6 +1,6 @@
 <?php
 /**
-	* Array contains routes's names\
+	* Array contains routes's names
 	*
 	* @package Moana
 	* @subpackage routes config file
@@ -19,8 +19,8 @@
 				'action' => 'login'
 			],
 
-			'news/show' => [
-					'controller' => 'news',
-					'action' => 'show'
+			'register' => [
+				'controller' => 'account',
+				'action' => 'register'
 			]
 		];
