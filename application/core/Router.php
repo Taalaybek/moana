@@ -103,13 +103,15 @@
 					{
 						if( $this->verify() )
 						{
-							$path = 'application\controllers\\' . ucfirst($this->params['controller']) . "Controller.php";
+							$path = 'application\controllers\\' . ucfirst($this->params['controller']) . "Controller";
 
 							if ( class_exists($path) )
 							{
 								$action = $this->params['action'] . 'Action';
-								( method_exists($path, $action) ) ? print('ok') : print('no' . $action);
-								
+								if( method_exists($path, $action) ){
+									$controller = new $path;
+									$controller->$action();
+								}
 							} else {
 								echo "error " . $path;
 							}
