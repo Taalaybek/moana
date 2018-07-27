@@ -107,9 +107,11 @@
 
 							if ( class_exists($path) )
 							{
-								echo $path;
+								$action = $this->params['action'] . 'Action';
+								( method_exists($path, $action) ) ? print('ok') : print('no' . $action);
+								
 							} else {
-								echo "error";
+								echo "error " . $path;
 							}
 
 						}else {
