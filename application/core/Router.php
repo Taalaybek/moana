@@ -103,11 +103,11 @@
 					{
 						if( $this->verify() )
 						{
-							$controller = 'application\controllers\\' . ucfirst($this->params['controller']) . "Controller.php";
+							$path = 'application\controllers\\' . ucfirst($this->params['controller']) . "Controller.php";
 
-							if ( class_exists($controller) )
+							if ( class_exists($path) )
 							{
-								echo $controller;
+								echo $path;
 							} else {
 								echo "error";
 							}
