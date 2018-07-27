@@ -27,10 +27,11 @@
   * Main custom controller
   *
   * @package Moana
-  * @category Default controller
+  * @category Custom default controller
   * @author Alex Bowey, https://github.com/Taalaybek
   * @link https://github.com/Taalaybek/moana/wiki
   */
+
 		namespace application\controllers;
 		use application\core\Controller;
 
