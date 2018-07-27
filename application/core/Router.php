@@ -19,7 +19,7 @@
   * @copyright Copyright (c) 2018, Eshenov Taalaybek
   * @license http://opensource.org/licenses/MIT	MIT License
   * @link https://themoana.000webhostapp.com/ Home page / GitHub https://github.com/Taalaybek/moana
-  * @since Version 1.0.0
+  * @version 1.0.0
   *
 	*/
 
@@ -62,6 +62,7 @@
 						foreach ( $arr as $key => $val ) {
 							$this->add( $key, $val );
 						}
+						$this->run();
 					}
 
 			/**
@@ -74,23 +75,46 @@
 						$route = "#^" . $route . "$#";
 						$this->routes[$route] = $params;
 					}
+
 			/**
 				*	Verify routes method
-				*	@param $route, $params
+				*	@param $this->routes, $_SERVER['REQUEST_URI']
 				* @version 1.0.0
 				*/
 					public function verify()
 					{
+						$url = trim($_SERVER['REQUEST_URI'], '/');
 
+						foreach ( $this->routes as $route => $params ) {
+							if ( preg_match($route, $url, $coincidence) ){
+								$this->params = $params;
+								return true;
+							}
+						}
+						return false;
 					}
+
 			/**
-				*	Run routes method
-				*	@param $route, $params
+				*	Run methods method
+				*	@param
 				* @version 1.0.0
 				*/
 					public function run()
 					{
+						if( $this->verify() )
+						{
+							$controller = 'application\controllers\\' . ucfirst($this->params['controller']) . "Controller.php";
 
+							if ( class_exists($controller) )
+							{
+								echo $controller;
+							} else {
+								echo "error";
+							}
+
+						}else {
+							echo "Wrong itinerary of web-site";
+						}
 					}
 		};
 		

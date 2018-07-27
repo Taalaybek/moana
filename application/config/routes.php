@@ -9,6 +9,11 @@
 	* @link https://github.com/Taalaybek/moana/wiki
 	*/
 		return [
+			'' => [
+				'controller' => 'main',
+				'action' => 'index'
+			],
+
 			'account/login' => [
 				'controller' => 'account',
 				'action' => 'login'
