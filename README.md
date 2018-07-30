@@ -13,7 +13,7 @@ git clone https://github.com/Taalaybek/moana.git
 or with Composer
 
 ```
-composer require alexbowey/moana
+composer require alexbowey/moana [in future updates]
 ```
 
 ### Prerequisites
