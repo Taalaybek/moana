@@ -33,6 +33,7 @@
   */
   
     namespace application\core;
+    use application\core\View;
 
     abstract class Controller
     {
@@ -44,6 +45,12 @@
           public $route;
 
       /**
+        * Contains View core library object
+        * @param Object
+        */
+          public $view;
+
+      /**
         * Class constructor
         * @method's load routes config, library, take down new routes in to add method
         * @version 1.0.0
@@ -51,5 +58,6 @@
           public function __construct($route)
           {
             $this->route = $route;
+            $this->view = new View($this->route);
           }
     }
