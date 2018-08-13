@@ -30,7 +30,7 @@ Apache / Nginx
 
 #### Contributing
 
-Of course I will be ver glad contributers. Please contact with me
+Please contact with me
 
 ```
 alex.bowey@yahoo.com
@@ -38,7 +38,7 @@ alex.bowey@yahoo.com
 
 ## Authors
 
-* **Alex Bowey** - *Initial work* - [Taalaybek](https://github.com/PurpleBooth)
+* **Alex Bowey** - *Initial work* - [Taalaybek](https://github.com/Taalaybek)
 
 ## License
 
