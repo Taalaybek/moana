@@ -44,6 +44,18 @@
           public $route;
 
       /**
+        * Contains path of current layout made with @route's params
+        * @param String
+        */
+          public $path;
+
+      /**
+        * Contains default layout name
+        * @param String
+        */
+          public $layout = 'default';
+
+      /**
         * Class constructor
         * @method's load routes config, library, take down new routes in to add method
         * @version 1.0.0
@@ -51,6 +63,7 @@
           public function __construct($route)
           {
             $this->route = $route;
-            debug($this->route);
+            $this->path = $this->route['controller'] . '/' . $this->route['action'];
+            debug($route);
           }
     }
