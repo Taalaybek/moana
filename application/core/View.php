@@ -72,4 +72,14 @@
             $this->route = $route;
             $this->path = $this->route['controller'] . '/' . $this->route['action'];
           }
+
+      /**
+        * Render method
+        * @method loads view's layouts
+        * @version 1.0.0
+        */
+          public function render( $title, $var = [] )
+          {
+            
+          }
     }
