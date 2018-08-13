@@ -60,8 +60,8 @@
         * @param String 
         * @property private
         */
-          private const $VIEWS_PATH = 'application/views/';
-          
+          private $VIEWS_PATH = 'application/views/';
+
       /**
         * Class constructor
         * @method's load routes config, library, take down new routes in to add method
