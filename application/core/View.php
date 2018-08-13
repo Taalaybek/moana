@@ -56,6 +56,13 @@
           public $layout = 'default';
 
       /**
+        * Default view's path
+        * @param String 
+        * @property private
+        */
+          private const $VIEWS_PATH = 'application/views/';
+          
+      /**
         * Class constructor
         * @method's load routes config, library, take down new routes in to add method
         * @version 1.0.0
@@ -64,6 +71,5 @@
           {
             $this->route = $route;
             $this->path = $this->route['controller'] . '/' . $this->route['action'];
-            debug($route);
           }
     }
