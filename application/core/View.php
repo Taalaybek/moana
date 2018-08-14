@@ -80,6 +80,6 @@
         */
           public function render( $title, $var = [] )
           {
-            
+            require $this->VIEWS_PATH . 'layouts/' . $this->layout . '.php';
           }
     }
