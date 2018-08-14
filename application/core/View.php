@@ -80,6 +80,11 @@
         */
           public function render( $title, $var = [] )
           {
-            require $this->VIEWS_PATH . 'layouts/' . $this->layout . '.php';
+            if ( file_exists($this->path . '.php') ) {
+              ob_start();
+              require $this->VIEWS_PATH . $this->path . '.php';
+              $content = ob_get_clean();
+              require $this->VIEWS_PATH . 'layouts/' . $this->layout . '.php';
+            }
           }
     }
