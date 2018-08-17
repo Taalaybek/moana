@@ -78,8 +78,11 @@
         * @method loads view's layouts
         * @version 1.0.0
         */
-          public function render( $title, $var = [] )
+          public function render( $title, $vars = [] )
           {
+            // Passed elements of array as variables in to view layouts
+            extract($vars);
+
             if ( file_exists($this->path . '.php') ) {
               ob_start();
               require $this->VIEWS_PATH . $this->path . '.php';
