@@ -83,7 +83,7 @@
             // Passed elements of array as variables in to view layouts
             extract($vars);
 
-            if ( file_exists($this->path . '.php') ) {
+            if ( file_exists($this->VIEWS_PATH . $this->path . '.php') ) {
               ob_start();
               require $this->VIEWS_PATH . $this->path . '.php';
               $content = ob_get_clean();
