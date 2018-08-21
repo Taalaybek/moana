@@ -24,10 +24,10 @@
   */
 
 /**
-  * Main custom controller
+  * Default controller
   *
   * @package Moana
-  * @category Custom default controller
+  * @category Custom controller
   * @author Alex Bowey, https://github.com/Taalaybek
   * @link https://github.com/Taalaybek/moana/wiki
   */
@@ -39,7 +39,7 @@
 		{
 
 			/**
-        * Index custom controller
+        * Index custom method
         * @method index method. Opened index page
         * @version 1.0.0
         */
