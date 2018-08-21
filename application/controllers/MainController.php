@@ -45,6 +45,7 @@
         */
 					public function indexAction()
 					{
-						debug($this->route);
+						$this->view->render("Home page");
 					}
+
 		}

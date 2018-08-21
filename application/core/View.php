@@ -24,31 +24,43 @@
   */
 
 /**
-  * Main core controller. Abstract class
+  * View core library
   *
   * @package Moana
-  * @category Core controller
+  * @category layouts loader
   * @author Alex Bowey, https://github.com/Taalaybek
   * @link https://github.com/Taalaybek/moana/wiki
   */
   
     namespace application\core;
-    use application\core\View;
 
-    abstract class Controller
+    class View
     {
       
       /**
-        * $Route property contains in itself $route variable gear from construct
-        * @param empty property
+        * Current route information
+        * @param Array
         */
           public $route;
 
       /**
-        * Contains View core library object
-        * @param Object
+        * Contains path of current layout made with @route's params
+        * @param String
         */
-          public $view;
+          public $path;
+
+      /**
+        * Contains default layout name
+        * @param String
+        */
+          public $layout = 'default';
+
+      /**
+        * Default view's path
+        * @param String 
+        * @property private
+        */
+          private $VIEWS_PATH = 'application/views/';
 
       /**
         * Class constructor
@@ -58,6 +70,24 @@
           public function __construct($route)
           {
             $this->route = $route;
-            $this->view = new View($this->route);
+            $this->path = $this->route['controller'] . '/' . $this->route['action'];
+          }
+
+      /**
+        * Render method
+        * @method loads view's layouts
+        * @version 1.0.0
+        */
+          public function render( $title, $vars = [] )
+          {
+            // Passed elements of array as variables in to view layouts
+            extract($vars);
+
+            if ( file_exists($this->VIEWS_PATH . $this->path . '.php') ) {
+              ob_start();
+              require $this->VIEWS_PATH . $this->path . '.php';
+              $content = ob_get_clean();
+              require $this->VIEWS_PATH . 'layouts/' . $this->layout . '.php';
+            }
           }
     }
