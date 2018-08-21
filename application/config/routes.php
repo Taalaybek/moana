@@ -10,7 +10,7 @@
 	*/
 		return [
 			'' => [
-				'controller' => 'main',
+				'controller' => 'default',
 				'action' => 'index'
 			],
 
