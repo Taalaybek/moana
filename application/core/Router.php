@@ -76,6 +76,7 @@
 			/**
 				*	Add new route method
 				*	@param $route, $params
+        * @var array
 				*/
 					public function add( $route, $params )
 					{
