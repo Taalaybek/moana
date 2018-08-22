@@ -12,15 +12,5 @@
 			'' => [
 				'controller' => 'default',
 				'action' => 'index'
-			],
-
-			'account/login' => [
-				'controller' => 'account',
-				'action' => 'login'
-			],
-
-			'register' => [
-				'controller' => 'account',
-				'action' => 'register'
 			]
 		];
