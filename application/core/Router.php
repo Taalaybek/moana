@@ -1,5 +1,7 @@
 <?php
 /**
+  * Moana
+  *
 	* An open source application development framework for PHP
 	* This content is released under the MIT License (MIT)
 	* Copyright (c) 2018, Kyrgyzstan, Bishkek, Alex Bowey
@@ -14,9 +16,17 @@
   * The above copyright notice and this permission notice shall be included in
   * all copies or substantial portions of the Software.
   *
+  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  * FITNESS FOR A PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL THE
+  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  * THE SOFTWARE.
+  *
   * @package Moana
   * @author Alex Bowey
-  * @copyright Copyright (c) 2018, Eshenov Taalaybek
+  * @copyright Copyright (c) 2018, Alex Bowey
   * @license http://opensource.org/licenses/MIT	MIT License
   * @link https://themoana.000webhostapp.com/ Home page / GitHub https://github.com/Taalaybek/moana
   * @version 1.0.0
@@ -40,20 +50,18 @@
 			
 			/**
 				* Routes's names
-				* @param array, default value - empty
+				* @var array
 				*/
 					protected $routes = [];
 
 			/**
 				* Routes's params
-				* @param array, default value - empty
+				* @var array
 				*/
 					protected $params = [];
 
 			/**
-				*	Class constructor
-				* @method's load routes config, library, take down new routes in to add method
-				* @version 1.0.0
+				*	Class's constructor
 				*/
 					public function __construct()
 					{
@@ -68,7 +76,6 @@
 			/**
 				*	Add new route method
 				*	@param $route, $params
-				* @version 1.0.0
 				*/
 					public function add( $route, $params )
 					{
@@ -78,8 +85,7 @@
 
 			/**
 				*	Verify routes method
-				*	@param $this->routes, $_SERVER['REQUEST_URI']
-				* @version 1.0.0
+				*	@return boolean
 				*/
 					public function verify()
 					{
@@ -96,8 +102,7 @@
 
 			/**
 				*	Run methods method
-				*	@param
-				* @version 1.0.0
+				* @var object|string
 				*/
 					public function run()
 					{
