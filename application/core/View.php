@@ -1,5 +1,7 @@
 <?php 
 /**
+  * Moana
+  *
   * An open source application development framework for PHP
   * This content is released under the MIT License (MIT)
   * Copyright (c) 2018, Kyrgyzstan, Bishkek, Alex Bowey
@@ -14,9 +16,17 @@
   * The above copyright notice and this permission notice shall be included in
   * all copies or substantial portions of the Software.
   *
+  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  * FITNESS FOR A PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL THE
+  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  * THE SOFTWARE.
+  *
   * @package Moana
   * @author Alex Bowey
-  * @copyright Copyright (c) 2018, Eshenov Taalaybek
+  * @copyright Copyright (c) 2018, Alex Bowey
   * @license http://opensource.org/licenses/MIT MIT License
   * @link https://themoana.000webhostapp.com/ Home page / GitHub https://github.com/Taalaybek/moana
   * @version 1.0.0
@@ -27,7 +37,7 @@
   * View core library
   *
   * @package Moana
-  * @category layouts loader
+  * @category core view library
   * @author Alex Bowey, https://github.com/Taalaybek
   * @link https://github.com/Taalaybek/moana/wiki
   */
@@ -39,33 +49,30 @@
       
       /**
         * Current route information
-        * @param Array
+        * @var array
         */
           public $route;
 
       /**
-        * Contains path of current layout made with @route's params
-        * @param String
+        * Contains path of current layout made with route's params
+        * @var string
         */
           public $path;
 
       /**
         * Contains default layout name
-        * @param String
+        * @var string
         */
           public $layout = 'default';
 
       /**
         * Default view's path
-        * @param String 
-        * @property private
+        * @var string
         */
           private $VIEWS_PATH = 'application/views/';
 
       /**
         * Class constructor
-        * @method's load routes config, library, take down new routes in to add method
-        * @version 1.0.0
         */
           public function __construct($route)
           {
@@ -75,8 +82,9 @@
 
       /**
         * Render method
-        * @method loads view's layouts
-        * @version 1.0.0
+        * @method render()
+        * @param $title string
+        * @param $vars array
         */
           public function render( $title, $vars = [] )
           {
