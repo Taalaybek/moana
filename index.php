@@ -42,7 +42,6 @@
   * @link https://github.com/Taalaybek/moana/wiki
   */
     use application\core\Router;
-    require 'application/lib/Dev_helper.php';
 
     spl_autoload_register( function($class){
       $path = str_replace('\\', '/', $class . ".php");
