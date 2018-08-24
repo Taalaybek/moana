@@ -15,8 +15,23 @@
 
 		class DefaultController extends Controller
 		{
+		  /**
+		    * Contains Custom object
+		    * @var object
+		    */
+         public $custom_model;
 
-			/**
+      /**
+        * DefaultController constructor.
+        * @param $route
+        */
+         public function __construct($route)
+         {
+           parent::__construct($route);
+           $this->custom_model = $this->load_model("Custom");
+         }
+
+      /**
         * Index Page for this controller.
         * Maps to the following URL:
         *             https://example.com/
