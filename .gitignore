@@ -1,0 +1,22 @@
+# Custom user views files
+/application/views/*
+!/application/views/default/
+!/application/views/layouts/
+!/application/views/errors/
+
+# IDE and Code Editor files
+/node_modules
+/nbproject
+/media
+/vendor
+/.idea
+/.vscode
+/.vagrant
+
+# Error Log files and folders
+/logs
+npm-debug.log
+yarn-error.log
+
+# Composer
+composer.lock

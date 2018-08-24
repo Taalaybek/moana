@@ -29,25 +29,73 @@
   * @copyright Copyright (c) 2018, Alex Bowey
   * @license http://opensource.org/licenses/MIT MIT License
   * @link https://themoana.000webhostapp.com/ Home page / GitHub https://github.com/Taalaybek/moana
-  * @since Version 1.0.0
+  * @version 1.0.0
   *
   */
 
 /**
-  * Application initialization base file
+  * View core library
   *
   * @package Moana
-  * @category application initialization file
+  * @category core view library
   * @author Alex Bowey, https://github.com/Taalaybek
   * @link https://github.com/Taalaybek/moana/wiki
   */
-    use application\core\Router;
+  
+    namespace application\core;
 
-    spl_autoload_register( function($class){
-      $path = str_replace('\\', '/', $class . ".php");
-      if (file_exists($path)) {
-        require $path;
-      };
-    } );
+    class View
+    {
+      
+      /**
+        * Current route information
+        * @var array
+        */
+          public $route;
 
-    $router = new Router;
+      /**
+        * Contains path of current layout made with route's params
+        * @var string
+        */
+          public $path;
+
+      /**
+        * Contains default layout name
+        * @var string
+        */
+          public $layout = 'default';
+
+      /**
+        * Default view's path
+        * @var string
+        */
+          private $VIEWS_PATH = 'application/views/';
+
+      /**
+        * Class constructor
+        */
+          public function __construct($route)
+          {
+            $this->route = $route;
+            $this->path = $this->route['controller'] . '/' . $this->route['action'];
+          }
+
+      /**
+        * Render method
+        * @method render()
+        * @param $title string
+        * @param $vars array
+        */
+          public function render( $title, $vars = [] )
+          {
+            // Passed elements of array as variables in to view layouts
+            extract($vars);
+
+            if ( file_exists($this->VIEWS_PATH . $this->path . '.php') ) {
+              ob_start();
+              require $this->VIEWS_PATH . $this->path . '.php';
+              $content = ob_get_clean();
+              require $this->VIEWS_PATH . 'layouts/' . $this->layout . '.php';
+            }
+          }
+    }

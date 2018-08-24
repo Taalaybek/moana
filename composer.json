@@ -1,14 +1,22 @@
 {
-	"description": "The Moana Simple PHP framework",
-	"name": "moana/framework",
-	"type": "project",
+	"name": "alexbowey/moana",
+    "description": "The Moana is simple MVC PHP library",
+	"type": "library",
 	"homepage": "https://themoana.000webhostapp.com/",
 	"license": "MIT",
+    "readme": "README.md",
+    "authors": [
+        {
+            "name": "Alex Bowey",
+            "email": "alex.bowey@yahoo.com"
+        }
+    ],
 	"support": {
 		"wiki": "https://github.com/Taalaybek/moana/wiki",
-		"source": "https://github.com/Taalaybek/moana"
+		"source": "https://github.com/Taalaybek/moana",
+        "email": "alex.bowey@yahoo.com"
 	},
 	"require": {
-		"php": ">=7.1"
+		"php": ">=7.0"
 	}
 }

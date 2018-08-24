@@ -29,25 +29,57 @@
   * @copyright Copyright (c) 2018, Alex Bowey
   * @license http://opensource.org/licenses/MIT MIT License
   * @link https://themoana.000webhostapp.com/ Home page / GitHub https://github.com/Taalaybek/moana
-  * @since Version 1.0.0
+  * @version 1.0.0
   *
   */
 
 /**
-  * Application initialization base file
+  * Main core controller. Abstract class
   *
   * @package Moana
-  * @category application initialization file
+  * @category Core controller
   * @author Alex Bowey, https://github.com/Taalaybek
   * @link https://github.com/Taalaybek/moana/wiki
+  * @method render() including files
   */
-    use application\core\Router;
+  
+    namespace application\core;
+    use application\core\View;
 
-    spl_autoload_register( function($class){
-      $path = str_replace('\\', '/', $class . ".php");
-      if (file_exists($path)) {
-        require $path;
-      };
-    } );
+    abstract class Controller
+    {
+      
+      /**
+        * $Route property contains in itself $route variable gear from construct
+        * @var array
+        */
+          public $route;
 
-    $router = new Router;
+      /**
+        * Contains View core library object
+        * @var object
+        */
+          public $view;
+
+      /**
+        * __constructor. Creates View object
+        */
+          public function __construct($route)
+          {
+            $this->route = $route;
+            $this->view = new View($this->route);
+          }
+
+      /**
+        * Model loader
+        * @param string $model_name
+        * @return object
+        */
+          public function load_model($model_name)
+          {
+            $model = "application\models\\" . $model_name . 'Model';
+            if (class_exists($model)) {
+              return new $model();
+            }
+          }
+    }
