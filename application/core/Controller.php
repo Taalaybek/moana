@@ -62,11 +62,24 @@
           public $view;
 
       /**
-        * Class constructor
+        * __constructor. Creates View object
         */
           public function __construct($route)
           {
             $this->route = $route;
             $this->view = new View($this->route);
+          }
+
+      /**
+        * Model loader
+        * @param string $model_name
+        * @return object
+        */
+          public function load_model($model_name)
+          {
+            $model = "application\models\\" . $model_name . 'Model';
+            if (class_exists($model)) {
+              return new $model();
+            }
           }
     }
