@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Taalaybek/moana.svg?branch=master)](https://travis-ci.org/Taalaybek/moana)
+
 # About Moana
 
 Moana is a web application framework. Use this in little projects. 
