@@ -46,13 +46,6 @@ namespace application\core;
 
 abstract class Model
 {
-  /**
-   * Model constructor
-   */
-  public function __construct()
-  {
-  
-  }
   
   /**
    * Library loader
