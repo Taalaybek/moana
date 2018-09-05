@@ -75,8 +75,9 @@ class Router
   
   /**
    *  Add new route method
-   * @param $route , $params
-   * @var array
+   * @param string $route
+   * @param string $params
+   * @return void
    */
   public function add($route, $params)
   {
@@ -103,7 +104,7 @@ class Router
   
   /**
    *  Run methods method
-   * @var object|string
+   * @return void
    */
   public function run()
   {
