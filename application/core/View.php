@@ -82,9 +82,9 @@ class View
   
   /**
    * Render method
-   * @method render()
-   * @param $title string
-   * @param $vars array
+   * @param string $title
+   * @param array $vars
+   * @return void
    */
   public function render($title, $vars = [])
   {
