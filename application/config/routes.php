@@ -1,5 +1,4 @@
 <?php
-
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
@@ -31,9 +30,4 @@
 |		my-controller/my-method	-> my_controller/my_method
  */
 
-return [
-	'' => [
-		'controller' => 'default',
-    'action' => 'index'
-  ]
-];
+return ['' => ['controller' => 'default', 'action' => 'index']];
