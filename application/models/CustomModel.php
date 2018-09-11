@@ -27,7 +27,6 @@ class CustomModel extends Model
    */
   public function __construct()
   {
-    parent::__construct();
     $this->example = $this->load_library('Example');
     // $this->example->output();
   }
