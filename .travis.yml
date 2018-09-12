@@ -1,0 +1,7 @@
+language: php
+php:
+- 7.1
+- 7.2
+- hhvm
+install: - composer install --no-dev --quiet
+script: phpunit -с phpunit.xml --coverage-text
